@@ -1,0 +1,11 @@
+GetSDTStatus
+http://172.16.17.7:18843/public
+POST
+{"":""}
+{"momoMsg":{"_class":"mservice.backend.entity.msg.LoginMsg"},"time":1.478925634852E12,"user":"0919069079","cmdId":"46382226831664","lang":"vi","msgType":"CHECK_USER_BE_MSG","appCode":"EU","appVer":2,"channel":"APP"}
+
+GetDinhDanhTK
+http://172.16.43.22:9870/uat/api/v1/account/get-status
+POST
+{"Content-Type":"application/pgp-encrypted","Accept":"application/pgp-encrypted"}
+{"request_id":"T1123001","account_id":"01234567126"}

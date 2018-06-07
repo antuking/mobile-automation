@@ -1,0 +1,46 @@
+<project name="TestNGTest" default="test" basedir=".">
+
+    <!-- Define <testng> task -->
+
+    <taskdef name="testng" classname="org.testng.TestNGAntTask" classpath="${basedir}/lib/testng-6.10.jar"/>
+    <taskdef resource="testngtasks" classpath="${basedir}/lib/testng-6.10.jar"/>
+
+    <property name="testdir" location="test" />
+    <property name="srcdir" location="src/momo/appium/" />
+    <property name="libdir" location="lib" />
+    <property name="full-compile" value="true" />
+
+    <path id="classpath.base"/>
+
+    <path id="classpath.test">
+
+        <fileset dir="${libdir}">
+            <include name="**/*.jar" />
+        </fileset>
+
+        <pathelement location="${srcdir}" />
+        <pathelement location="${testdir}" />
+        <path refid="classpath.base" />
+    </path>
+
+    <target name="clean" >
+        <delete verbose="${full-compile}">
+            <fileset dir="${testdir}" includes="**/*.class" />
+        </delete>
+    </target>
+
+    <target name="compile" depends="clean">
+        <javac destdir="${testdir}" verbose="${full-compile}">
+            <src path="${libdir}"/>
+            <src path="${srcdir}"/>
+            <classpath refid="classpath.test"/>
+        </javac>
+    </target>
+
+    <target name="test" depends="compile">
+        <testng outputdir="${testdir}" classpathref="classpath.test" useDefaultListeners="true">
+            <xmlfileset dir="${srcdir}" includes="momo.xml"/>
+        </testng>
+    </target>
+
+</project>

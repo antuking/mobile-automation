@@ -1,0 +1,58 @@
+.containr
+{
+    //border: 2px solid red;
+}
+.mauxanh
+{
+    color: #039be5;
+}
+.maudo
+{
+    color: red;
+}
+.timestamp
+{
+    text-align: center;
+    //display: none;
+}
+.status
+{
+    text-align: center;
+}
+
+@-webkit-keyframes my {
+    0% { color: #F8CD0A; }
+    50% { color: #fff;  }
+    100% { color: #F8CD0A;  }
+}
+@-moz-keyframes my {
+    0% { color: #F8CD0A;  }
+    50% { color: #fff;  }
+    100% { color: #F8CD0A;  }
+}
+.chop {
+    font-size:20px;
+    -webkit-animation: my 700ms infinite;
+    -moz-animation: my 700ms infinite;
+    -o-animation: my 700ms infinite;
+    animation: my 700ms infinite;
+}
+
+#snowflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.snowflake {
+    padding-left: 15px;
+    font-family: Cambria, Georgia, serif;
+    font-size: 14px;
+    line-height: 24px;
+    position: fixed;
+    color: #FFFFFF;
+    user-select: none;
+    z-index: 1000;
+}
+.snowflake:hover {
+    cursor: default;
+}
